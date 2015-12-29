@@ -24,10 +24,22 @@
             <div class="wrap">
                 <div class="text">
                     <h1>.</h1>
-                    <h2>This is a full stop, not a period, full stop.</h2> </div>
+                    <h2 id="nametext"></h2>
+                    <h2>This is a full stop, not a period, full stop.</h2>
+                </div>
             </div>
         </div>
     </div>
 </body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+                var name = 'Hello,'
+                var url = window.location.href;
+                name = url.match(/name=(.*)/)[1];
+                var text = document.getElementById("nametext");
+                text.innerHTML = [1];
+            }
+</script>
 
 </html>
