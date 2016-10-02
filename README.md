@@ -20,7 +20,5 @@ Please read `CONTRIBUTION.MD` before creating your first pull request.
 
 @blanyal - white background and no text animation fix
 
-@magicp - typed.js terminal page
-
 ## License
 The code is licensed under the MIT Open Source License. Please see `LICENSE` for more information.
