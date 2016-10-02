@@ -1,12 +1,11 @@
 <html>
-
-<head>
+  <head>
     <meta name="description" content="Hey Anonymous, This is a full stop, not a period, full stop.">
     <meta name="author" content="Yong Cho Yin">
     <title>This is a Full Stop.</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.1.0/css/bulma.min.css" />
-</head>
-<style>
+  </head>
+  <style>
     .wrapper {
         display: table;
         height: 100%;
@@ -18,35 +17,32 @@
         vertical-align: middle;
         text-align: center;
     }
-</style>
+  </style>
 
-<body>
-
+  <body>
     <section class="hero is-success is-fullheight">
-        <div class="hero-content">
-            <div class="container">
-                <span class="icon major fa-circle"></span>
-                <h1 class="title" id="nametext">Anonymous,</h1>
-                <h1 class="title">This is a full stop, not a period, full stop</h1>
-            </div>
+      <div class="hero-content">
+        <div class="container">
+          <span class="icon major fa-circle"></span>
+          <h1 class="title" id="nametext">Anonymous,</h1>
+          <h1 class="title">This is a full stop, not a period, full stop</h1>
         </div>
+      </div>
     </section>
-</body>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script type="text/javascript">
+  </body>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script type="text/javascript">
     $(document).ready(function () {
-    
-    var backgroundColors = ["#7697cd", "#cd7697", "#76c3cd", "#8176cd"];
-    var backgroundColorsIndex = Math.floor((Math.random() * backgroundColors.length-1) + 0);
-    
-    $(".hero.is-success").css("background-color", backgroundColors[backgroundColorsIndex]);
-    
-        var name = 'Hello,'
-        var url = window.location.href;
-        name = url.match(/name=(.*)/)[1];
-        var text = document.getElementById("nametext");
-        text.innerHTML = name + ",";
-    })
-</script>
+      var backgroundColors = ["#7697cd", "#cd7697", "#76c3cd", "#8176cd"];
+      var backgroundColorsIndex = Math.floor((Math.random() * backgroundColors.length-1) + 0);
 
+      $(".hero.is-success").css("background-color", backgroundColors[backgroundColorsIndex]);
+
+      var name = 'Hello,'
+      var url = window.location.href;
+      name = url.match(/name=(.*)/)[1];
+      var text = document.getElementById("nametext");
+      text.innerHTML = name + ",";
+    })
+  </script>
 </html>
