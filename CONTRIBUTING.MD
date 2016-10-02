@@ -1,6 +1,4 @@
 ## Contributing
-Full text: `CONTRIBUTION.MD`
-
 Head on to issues and choose one to work on! When you make a pull request please also put your name under Contributors so you get the credit.
 
 ### 1. Forking
