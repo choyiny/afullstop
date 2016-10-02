@@ -19,6 +19,10 @@
         vertical-align: middle;
         text-align: center;
     }
+
+    .hero-content{
+    	text-align: center;
+    }
 </style>
 
 <body>
@@ -28,7 +32,7 @@
             <div class="container">
                 <span class="icon major fa-circle"></span>
                 <h1 class="title" id="nametext">Anonymous,</h1>
-                <h1 class="title">This is a full stop, not a period, full stop</h1>
+                <h1 class="title">This is a full stop, not a period, <p class="animated title animatedText">full stop</p></h1>
             </div>
         </div>
     </section>
@@ -39,14 +43,18 @@
     
     var backgroundColors = ["#7697cd", "#cd7697", "#76c3cd", "#8176cd"];
     var backgroundColorsIndex = Math.floor((Math.random() * backgroundColors.length-1) + 0);
+    var textAnimations = ["shake","bounce","flash","rubberBand","swing","tada","wooble"];
+    var textAnimationsIndex = Math.floor((Math.random() * textAnimations.length-1) + 0);
+    $(".animatedText").addClass(textAnimations[textAnimationsIndex]);
+
     $(".hero.is-success").css("background-color", backgroundColors[backgroundColorsIndex]);
-    
+    /*
         var name = 'Hello,'
         var url = window.location.href;
         name = url.match(/name=(.*)/)[1];
         var text = document.getElementById("nametext");
         text.innerHTML = name + ",";
-        
+        */
     })
 </script>
 
