@@ -9,7 +9,7 @@ http://afulls.top/?name=[somebody's name]
 ```
 
 ## Contributing
-Please read `CONTRIBUTION.MD` before creating your first pull request.
+Please read `CONTRIBUTING.MD` before creating your first pull request.
 
 ## Contributors
 @choyiny
