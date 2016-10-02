@@ -13,7 +13,7 @@
         height: 100%;
         width: 100%;
     }
-    
+
     .wrap {
         display: table-cell;
         vertical-align: middle;
@@ -31,31 +31,57 @@
         <div class="hero-content">
             <div class="container">
                 <span class="icon major fa-circle"></span>
-                <h1 class="title" id="nametext">Anonymous,</h1>
-                <h1 class="title">This is a full stop, not a period, <p class="animated title animatedText">full stop</p></h1>
+                <h1 class="title" id="nametext"><span id="placeholder-name"></span>,</h1>
+                <h1 class="title">
+                    This is a <span id="placeholder-correct"></span>, not a <span id="placeholder-incorrect"></span><span id="placeholder-seperator"></span> <p class="animated title animatedText">full stop</p>
+                </h1>
             </div>
         </div>
     </section>
 </body>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-    
-    var backgroundColors = ["#7697cd", "#cd7697", "#76c3cd", "#8176cd"];
-    var backgroundColorsIndex = Math.floor((Math.random() * backgroundColors.length-1) + 0);
-    var textAnimations = ["shake","bounce","flash","rubberBand","swing","tada","wooble"];
-    var textAnimationsIndex = Math.floor((Math.random() * textAnimations.length-1) + 0);
-    $(".animatedText").addClass(textAnimations[textAnimationsIndex]);
+        var backgroundColors = ["#7697cd", "#cd7697", "#76c3cd", "#8176cd"];
+        var backgroundColorsIndex = Math.floor((Math.random() * backgroundColors.length-1) + 0);
+        var textAnimations = ["shake", "bounce", "flash", "rubberBand", "swing", "tada", "wooble"];
+        var textAnimationsIndex = Math.floor((Math.random() * textAnimations.length-1) + 0);
+        $(".animatedText").addClass(textAnimations[textAnimationsIndex]);
 
-    $(".hero.is-success").css("background-color", backgroundColors[backgroundColorsIndex]);
-    /*
-        var name = 'Hello,'
-        var url = window.location.href;
-        name = url.match(/name=(.*)/)[1];
-        var text = document.getElementById("nametext");
-        text.innerHTML = name + ",";
-        */
+        $(".hero.is-success").css("background-color", backgroundColors[backgroundColorsIndex]);
+
+        // Replace all placeholders with real text
+        if(!getQueryParameter("correct", null) || !getQueryParameter("incorrect", null)) {
+            $("#placeholder-seperator").text(",");
+        } else {
+            $("#placeholder-seperator").text("!");
+            $(".animatedText").text("");
+        }
+
+        $("#placeholder-name").text(getQueryParameter("name", "Anonymous"));
+        $("#placeholder-correct").text(getQueryParameter("correct", "full stop"));
+        $("#placeholder-incorrect").text(getQueryParameter("incorrect", "period"));
     })
+
+    /**
+     * Get a query parameter.
+     *
+     * @param  string key
+     * @param  string fallback
+     * @return string
+     */
+    function getQueryParameter(key, fallback) {
+        key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&");
+
+        var match = location.search.match(new RegExp("[?&]"+key+"=([^&]+)(&|$)"));
+
+        if(match == null) {
+            return fallback;
+        }
+
+        return match && decodeURIComponent(match[1].replace(/\+/g, " "));
+    }
 </script>
 
 </html>
