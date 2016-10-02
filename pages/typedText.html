@@ -7,8 +7,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 </head>
 <style>
     .wrapper {
@@ -26,11 +25,11 @@
     .wrap h1 {
         color: white;
         font-size: 40px;
-        font-family: 'Amatic SC', cursive;
+        font-family: 'Inconsolata', monospace;
     }
 
     .wrap a {
-        font-family: 'Amatic SC', cursive;
+        font-family: 'Inconsolata', monospace;
         color: white;
         font-size: 25px;
         padding-left: 390px;
@@ -38,10 +37,40 @@
     }
 
     .unused {}
+    .choice{
+        color: white;
+        font-size: 40px;
+    }
+    .typed-cursor{
+        opacity: 1;
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+    }
+    @keyframes blink{
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+    }
+    @-webkit-keyframes blink{
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+    }
+    @-moz-keyframes blink{
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+    }
+
+    body{
+        font-family: 'Inconsolata', monospace;
+        background-color: black;
+    }
 </style>
 
 <body>
-    <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <a href="https://github.com/magicp"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
     <div class="wrapper">
         <div class="wrap">
             <!-- Typed Text Goes Here-->
@@ -54,30 +83,35 @@
 <script>
     var typedText = $(function(){
         $('.wrap').typed({
-            strings: ["<h1 class=\"title\"><span id=\"nametext\"> ^1000"+name+",</span></h1>"+
-        "^200 <h1 class=\"title\">This is a full stop, ^500 not a period, ^500 full stop.</h1>"+
-    "^300 <a href=\"../pages/textAnimation.html\">Really?</a>"]
-        })
+            strings: ["<h1 class=\"title\"><span id=\"nametext\"> ^1000 Hello,</span></h1>"+
+        "<h1 class=\"title\"> ^1000 I wish to test your knowledge.</h1>"+
+        "<h1 class=\"title\"> ^1000 Is this a fullstop?: .</h1>"+
+        "<h1 class=\"title\">Y/N: <span class=\"choice\"></span></h1>"+
+        "<h1 class=\"title\" id=\"output\"></h1>"]
+        });
     });
-</script>
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        // define background colors
-        var backgroundColors = ["#7697cd", "#cd7697", "#76c3cd", "#8176cd"];
-        var backgroundColorsIndex = Math.floor((Math.random() * backgroundColors.length - 1) + 0);
-
-        // create new background color every time page is visited.
-        $("body").css("background-color", backgroundColors[backgroundColorsIndex]);
-
-        // Modifies page content according the URL visited
-        var name = 'Hello,'
-        var url = window.location.href;
-        name = url.match(/name=(.*)/)[1];
-
-        if(name == ""){
-            name = "Anonymous"
+    $('body').keypress(function(event){
+        if(event.which == 121 || event.keycode == 121){
+            $('.choice').typed({
+                strings: ["Y"],
+                typeSpeed: 100,
+                showCursor: false
+            });
+            $('#output').typed({
+                strings: ["Excellent, ^500 you have learnt much."]
+            });
+        }
+        else if(event.which == 110 || event.keycode == 110){
+            $('.choice').typed({
+                strings: ["N"],
+                showCursor: false
+            });
+            $('#output').typed({
+                strings: ["It is a fullstop. ^500 Not a period. ^500 Fullstop."]
+            });
         };
+    });
+    $(document).ready(function () {
         typedText
     });
 </script>
