@@ -1,14 +1,15 @@
 <html>
-
 <head>
+    <meta charset="utf-8">
     <meta name="description" content="This is a full stop, not a period, full stop.">
     <meta name="author" content="choyiny">
     <title>This is a Full Stop.</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"
 </head>
 <style>
     .wrapper {
@@ -21,21 +22,42 @@
         display: table-cell;
         vertical-align: middle;
         padding-left: 100px;
+        text-align: center;
     }
     
     .wrap h1 {
         color: white;
         font-size: 40px;
         font-family: 'Amatic SC', cursive;
+
     }
     
     .wrap a {
         font-family: 'Amatic SC', cursive;
         color: white;
         font-size: 25px;
-        margin-left: 390px;
         text-decoration: none;
+        text-align: center;
     }
+    
+    #curious, #dictionary-definition{
+    	color: white;
+    }
+    
+    #dictionary-definition{
+    	font-family: 'Playfair Display', serif;
+    	font-size: 16px;
+    }
+    
+    #curious{
+    	font-family: 'Amatic SC', cursive;
+    }
+    
+    #curious:hover{
+   	 	cursor: pointer;
+    }
+    
+    .unused {}
 </style>
 
 <body>
@@ -44,25 +66,52 @@
         <div class="wrap">
             <h1 class="title"><span id="nametext">Anonymous,</span></h1>
             <h1 class="title">This is a full stop, not a period, full stop.</h1>
-            <a href="pages/textAnimation.html">Really?</a>
+            <h2 id="curious" onClick="dictionaryDefinition()">What?</a>
+            <h2 id="dictionary-definition">Full Stop (/ˈfʊl ˈstɑp/) - What you Americans call a period. </span>
+            <br>
+            <a id="animations" style="margin-top: 20px;" href="textAnimation.html">Really?</a>
         </div>
     </div>
 </body>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
 <script type="text/javascript">
+        
+        
+    //defining on click function for What?    
+    function dictionaryDefinition(){
+    	$("#curious").one('click', function(e) {
+    		$('#dictionary-definition').css("display", "block");
+    		$('#animations').css("display", "block");
+    	});
+    }
+
     $(document).ready(function () {
+		
+		//hide dictionary-definition and Really?
+		$('#dictionary-definition').css("display", "none");
+		$('#animations').css("display", "none");
+		
         // define background colors
         var backgroundColors = ["#7697cd", "#cd7697", "#76c3cd", "#8176cd"];
-        var backgroundColorsIndex = Math.floor((Math.random() * backgroundColors.length) + 0);
-        // create new background color every time page is visited.
-        $("body").css("background-color", backgroundColors[backgroundColorsIndex]);
+        //define font colors for What? and Really?
+        var fontColors = ["#1d304f", "#401727", "#1d494f", "#1d1740"];
+        var ColorsIndex = Math.floor((Math.random() * backgroundColors.length - 1) + 0);
+
+        // create new background color every time page is visited and set corresponding font color
+        $("body").css("background-color", backgroundColors[ColorsIndex]);
+        $('#curious').css("color", fontColors[ColorsIndex]);
+        $('#animations').css("color", fontColors[ColorsIndex]);
+        
         // Modifies page content according the URL visited
         var name = 'Hello,'
         var url = window.location.href;
         name = url.match(/name=(.*)/)[1];
         var text = document.getElementById("nametext");
         text.innerHTML = name + ",";
-    })
+        
+    
+    });
 </script>
 
 </html>

@@ -16,7 +16,7 @@ Please read `CONTRIBUTION.MD` before creating your first pull request.
 
 @anu0012 - animate.css
 
-@conscou - background color change
+@conscou - background color change, dictionary definition
 
 ## License
 The code is licensed under the MIT Open Source License. Please see `LICENSE` for more information.
