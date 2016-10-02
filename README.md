@@ -13,8 +13,14 @@ Please read `CONTRIBUTION.MD` before creating your first pull request.
 
 ## Contributors
 @choyiny
+
 @anu0012 - animate.css
+
 @conscou - background color change
+
+@blanyal - white background and no text animation fix
+
+@magicp - typed.js terminal page
 
 ## License
 The code is licensed under the MIT Open Source License. Please see `LICENSE` for more information.
