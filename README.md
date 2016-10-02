@@ -13,7 +13,9 @@ Please read `CONTRIBUTION.MD` before creating your first pull request.
 
 ## Contributors
 @choyiny
+
 @anu0012 - animate.css
+
 @conscou - background color change
 
 ## License
