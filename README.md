@@ -5,18 +5,20 @@ People have been saying that this (.) is a period. This is clearly incorrect. Th
 ## Usage
 Adjust URL to your likings:
 ```
-http://afulls.top/?name=[somebody's name]
+http://afulls.top/notaperiod/?name=[somebody's name]
 ```
 
 ## Contributing
-Please read `CONTRIBUTION.MD` before creating your first pull request.
+Please read `CONTRIBUTING.MD` before creating your first pull request.
 
 ## Contributors
-@choyiny
-
-@anu0012 - animate.css
-
-@conscou - background color change
+- @choyiny
+- @anu0012 - textAnimation.html
+- @conscou - background color change, dictionary definition
+- @erilyth
+- @blanyal - white background and no text animation fix
+- @magicp - typed.js terminal page
+- @BotamicIO - make input configurable
 
 ## License
 The code is licensed under the MIT Open Source License. Please see `LICENSE` for more information.
