@@ -14,7 +14,7 @@ Please read `CONTRIBUTING.MD` before creating your first pull request.
 ## Contributors
 - @choyiny
 - @anu0012 - textAnimation.html
-- @conscou - background color change
+- @conscou - background color change, dictionary definition
 - @erilyth
 - @blanyal - white background and no text animation fix
 - @magicp - typed.js terminal page
