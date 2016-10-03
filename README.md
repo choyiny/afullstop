@@ -18,6 +18,7 @@ Please read `CONTRIBUTING.MD` before creating your first pull request.
 - @erilyth
 - @blanyal - white background and no text animation fix
 - @magicp - typed.js terminal page
+- @BotamicIO - make input configurable
 
 ## License
 The code is licensed under the MIT Open Source License. Please see `LICENSE` for more information.
