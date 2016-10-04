@@ -38,18 +38,30 @@ const styles = {
 };
 
 /**
-  Small functional util that returns a random array item.
+  To return a random item of an array.
 **/
 const getRandomFromArray = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
 /**
+  To generate a complete URL to an subPath based on your current location
+  The subPath should not start or end with slashes.
+**/
+const getSubPathURL = (subPath, {origin, pathname, search}) => (origin+pathname+subPath+search);
+
+/**
   To receive a random design that our link will point at. Later, this code will be replaced with react based logic.
 **/
-const designs = ['textAnimation.html', 'typedText.html'];
+const designs = [
+  'configurable.html',
+  'dictionaryDefinition.html',
+  'gradienBackground.html',
+  'textAnimation.html',
+  'typedText.html'
+];
 
-const getRandomDesignURL = () => window.location.href+`designs/${getRandomFromArray(designs)}`;
+const getRandomDesignURL = () => getSubPathURL(`designs/${getRandomFromArray(designs)}`, window.location);
 
 /**
   This is the real page markup! It gets the URL query parameters as properties, so you can access them easily.
@@ -71,9 +83,9 @@ const parseQueryString = (queryString = '') => {
   queryString = queryString.trim().replace(/^(\?)/, '');
   queryString = queryString.split('&');
 
-  var query = {};
-  queryString.forEach(function(q) {
-    var segment = q.split('=');
+  const query = {};
+  queryString.forEach(q => {
+    const segment = q.split('=');
     query[segment[0]] = segment.length > 1 ? segment[1] : true;
   });
 

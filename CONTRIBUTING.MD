@@ -30,5 +30,8 @@ Please also do use a CDN for the below Libraries
 - Bootstrap CSS `<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">`
 - Bootstrap JS `<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>`
 
+#### Check before submitting
+- You did not include any `.DS_Store` files in your pull request.
+
 #### Credits
 We would love to credit you. When you make a pull request and it has been approved, please add your name to `README.md` in the contributors section.
