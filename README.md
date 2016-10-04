@@ -14,13 +14,14 @@ http://afulls.top/notaperiod/?name=[somebody's name]
 Please read `CONTRIBUTING.MD` before creating your first pull request.
 
 ## Contributors
-@choyiny
-
-@anu0012 - animate.css
-
-@conscou - background color change
-
-@blanyal - white background and no text animation fix
+- @choyiny
+- @anu0012 - textAnimation.html
+- @conscou - background color change, dictionary definition
+- @erilyth
+- @blanyal - white background and no text animation fix
+- @magicp - typed.js terminal page
+- @BotamicIO - make input configurable
+- @aakashkhatter1296 - changing gradient background
 
 @vailfire
 
