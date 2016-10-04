@@ -53,7 +53,13 @@ const getSubPathURL = (subPath, {origin, pathname, search}) => (origin+pathname+
 /**
   To receive a random design that our link will point at. Later, this code will be replaced with react based logic.
 **/
-const designs = ['textAnimation.html', 'typedText.html'];
+const designs = [
+  'configurable.html',
+  'dictionaryDefinition.html',
+  'gradienBackground.html',
+  'textAnimation.html',
+  'typedText.html'
+];
 
 const getRandomDesignURL = () => getSubPathURL(`designs/${getRandomFromArray(designs)}`, window.location);
 
