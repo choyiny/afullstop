@@ -1,0 +1,41 @@
+{
+  "name": "afullstop",
+  "version": "1.0.0",
+  "description": "People have been saying that this (`.`) is a period. This is clearly incorrect. This project aims to remind the people that it is a full stop.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint notaperiod",
+    "lintFix": "eslint notaperiod --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/choyiny/afullstop"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/choyiny/afullstop/issues"
+  },
+  "homepage": "http://afulls.top/notaperiod/",
+  "devDependencies": {
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "globals": {
+      "React": false,
+      "ReactDOM": false
+    },
+    "rules": {
+      "react/jsx-filename-extension": ["error", { "extensions": [".js"] }]
+    },
+    "extends": "airbnb"
+  }
+}
