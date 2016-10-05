@@ -20,6 +20,7 @@ Please read `CONTRIBUTING.MD` before creating your first pull request.
 - @magicp - typed.js terminal page
 - @BotamicIO - make input configurable
 - @aakashkhatter1296 - changing gradient background
+- @cedricium - "rainbow" custom theme
 
 ## License
 The code is licensed under the MIT Open Source License. Please see `LICENSE` for more information.
