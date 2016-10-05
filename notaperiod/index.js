@@ -8,11 +8,29 @@
   want to.
 **/
 
+/**
+ * "env": {
+   "browser": true,
+   "node": true
+ },
+ "parserOptions": {
+   "ecmaVersion": 7,
+   "ecmaFeatures": {
+     "jsx": true,
+     "experimentalObjectRestSpread": true
+   }
+ },
+ "plugins": [
+   "react"
+ ]
+}
+ */
+
 const baseStyle = {
   fontFamily: '"Tangerine", cursive',
   fontWeight: 400,
-  fontSize: `2rem`,
-  color: 'white'
+  fontSize: '2rem',
+  color: 'white',
 };
 
 const styles = {
@@ -23,56 +41,62 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    flexFlow: 'column'
+    flexFlow: 'column',
   },
   title: {
     ...baseStyle,
-    fontSize: `4rem`,
+    fontSize: '4rem',
     margin: 0,
   },
   link: {
     ...baseStyle,
     textDecoration: 'none',
     color: 'rgba(0, 0, 0, 0.75)',
-  }
+  },
 };
 
 /**
   To return a random item of an array.
 **/
-const getRandomFromArray = (array) => {
-  return array[Math.floor(Math.random() * array.length)];
-};
+const getRandomFromArray = array => array[Math.floor(Math.random() * array.length)];
 
 /**
   To generate a complete URL to an subPath based on your current location
   The subPath should not start or end with slashes.
 **/
-const getSubPathURL = (subPath, {origin, pathname, search}) => (origin+pathname+subPath+search);
+const getSubPathURL = (subPath, { origin, pathname, search }) => (
+  origin + pathname + subPath + search
+);
 
 /**
-  To receive a random design that our link will point at. Later, this code will be replaced with react based logic.
+  To receive a random design that our link will point at. Later, this code will
+  be replaced with react based logic.
 **/
 const designs = [
   'configurable.html',
   'dictionaryDefinition.html',
   'gradienBackground.html',
   'textAnimation.html',
-  'typedText.html'
+  'typedText.html',
 ];
 
 const getRandomDesignURL = () => getSubPathURL(`designs/${getRandomFromArray(designs)}`, window.location);
 
 /**
-  This is the real page markup! It gets the URL query parameters as properties, so you can access them easily.
+  This is the real page markup! It gets the URL query parameters as properties,
+  so you can access them easily.
 **/
-const App = (props) => (
+const App = props => (
   <div style={styles.container}>
-    <h1 style={{...styles.title, fontWeight: 700}}><span id="nametext">Dear {props.name ? props.name : "Anonymous"},</span></h1>
+    <h1 style={{ ...styles.title, fontWeight: 700 }}><span id="nametext">Dear {props.name ? props.name : 'Anonymous'},</span></h1>
     <h1 style={styles.title}>This is a full stop, not a period. A full stop.</h1>
     <a style={styles.link} href={getRandomDesignURL()}>really?</a>
   </div>
 );
+
+App.propTypes = {
+  name: React.PropTypes.string,
+};
 
 /**
   Parse a query string like '?name=anonymous&expression=sad' to an object
@@ -80,11 +104,12 @@ const App = (props) => (
   (modified by me, orignal source at https://github.com/intesso/url-query)
 **/
 const parseQueryString = (queryString = '') => {
-  queryString = queryString.trim().replace(/^(\?)/, '');
-  queryString = queryString.split('&');
-
   const query = {};
-  queryString.forEach(q => {
+
+  queryString.trim()
+  .replace(/^(\?)/, '')
+  .split('&')
+  .forEach((q) => {
     const segment = q.split('=');
     query[segment[0]] = segment.length > 1 ? segment[1] : true;
   });
@@ -95,6 +120,8 @@ const parseQueryString = (queryString = '') => {
 const getURLQuery = () => parseQueryString(window.location.search);
 
 /**
-  Actually this renders the component based design. You can just change to another design (that is transformed into a component) and the browser will render the appropriate page.
+  Actually this renders the component based design. You can just change to
+  another design (that is transformed into a component) and the browser will
+  render the appropriate page.
 **/
-ReactDOM.render(<App {...getURLQuery()} />,  document.getElementById('root'));
+ReactDOM.render(<App {...getURLQuery()} />, document.getElementById('root'));
