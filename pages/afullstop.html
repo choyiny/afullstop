@@ -69,6 +69,27 @@
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: 'Architects Daughter', sans-serif;
+        font-size: 1.5rem;
+        -webkit-animation: mymove 2s; /* Chrome, Safari, Opera */ 
+        animation: mymove 2s;
+        -webkit-animation-iteration-count: 1; /* Chrome, Safari, Opera */ 
+        animation-iteration-count: 1;
+    }
+
+    /* Chrome, Safari, Opera */ 
+    @-webkit-keyframes mymove {
+        0%   {left: -10%;}
+        25%  {left: 49%;}
+        75%  {left: 45%}
+        100% {left: 46%;}
+    }
+
+    /* Standard syntax */
+    @keyframes mymove {
+        0%   {left: -10%;}
+        25%  {left: 49%;}
+        75%  {left: 45%}
+        100% {left: 46%;}
     }
 
 </style> -->
