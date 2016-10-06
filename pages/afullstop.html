@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet"> 
+    </head>
+    <body>
+    
+        <div id="container">
+            
+            <div id="sidebar">
+                <div id="red"></div>
+                <div id="green"></div>
+                <div id="blue"></div>
+            </div>
+            
+            <div id="content">
+                <h1>
+                    Anonymous,
+                </h1>
+                <h1>
+                    This is a full stop, not a period, full stop.
+                </h1>
+            </div>
+            
+        </div>
+        
+    </body>
+</html>
+
+<style>
+
+    html,
+    body {
+        margin: 0 auto;
+        background-color: #fafafa;
+        color: #2A2829;
+    }
+
+    #container {
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+    #sidebar {
+        display: inline-block;
+        height: 100%;
+        width: 3%;
+    }
+
+    #red {
+        height: 33%;
+        background-color: #d1463c;
+    }
+
+    #green {
+        height: 33%;
+        background-color: #3cd155;
+    }
+
+    #blue {
+        height: 34%;
+        background-color: #3c75d1;
+    }
+
+    #content {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 46%;
+        transform: translate(-50%, -50%);
+        font-family: 'Architects Daughter', sans-serif;
+        font-size: 1.5rem;
+        -webkit-animation: mymove 2s; /* Chrome, Safari, Opera */ 
+        animation: mymove 2s;
+        -webkit-animation-iteration-count: 1; /* Chrome, Safari, Opera */ 
+        animation-iteration-count: 1;
+    }
+
+    /* Chrome, Safari, Opera */ 
+    @-webkit-keyframes mymove {
+        0%   {left: -10%;}
+        25%  {left: 49%;}
+        75%  {left: 45%}
+        100% {left: 46%;}
+    }
+
+    /* Standard syntax */
+    @keyframes mymove {
+        0%   {left: -10%;}
+        25%  {left: 49%;}
+        75%  {left: 45%}
+        100% {left: 46%;}
+    }
+
+</style>
