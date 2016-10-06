@@ -5,8 +5,8 @@
     <meta name="keywords" content="full stop, period, afullstop, remind, not a period">
     <meta name="description" content="The website is to remind people that ' . ' is called a full stop and not a period, full stop.">
     <title>This is a Full Stop.</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
@@ -39,6 +39,36 @@
         margin-left: 390px;
         text-decoration: none;
     }
+    body{
+        background: linear-gradient(300deg, #360033, #0b8793, #a83279, #cea163, #90e3f9, #556270, #c45252,#B993D6, #1a2980, #26d0ce);
+        background-size: 2200% 2200%;
+
+        -webkit-animation: colorChange 60s ease infinite;
+        -moz-animation: colorChange 60s ease infinite;
+        -o-animation: colorChange 60s ease infinite;
+        animation: colorChange 60s ease infinite;
+    }
+
+    @-webkit-keyframes colorChange {
+        0%{background-position:0% 49%}
+        50%{background-position:100% 52%}
+        100%{background-position:0% 49%}
+    }
+    @-moz-keyframes colorChange {
+        0%{background-position:0% 49%}
+        50%{background-position:100% 52%}
+        100%{background-position:0% 49%}
+    }
+    @-o-keyframes colorChange {
+        0%{background-position:0% 49%}
+        50%{background-position:100% 52%}
+        100%{background-position:0% 49%}
+    }
+    @keyframes colorChange { 
+        0%{background-position:0% 49%}
+        50%{background-position:100% 52%}
+        100%{background-position:0% 49%}
+    }
 </style>
 
 <body>
@@ -54,13 +84,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-
-        // define background colors
-        var backgroundColors = ["#7697cd", "#cd7697", "#76c3cd", "#8176cd"];
-        var backgroundColorsIndex = Math.floor((Math.random() * backgroundColors.length) + 0);
-
-        // create new background color every time page is visited.
-        $("body").css("background-color", backgroundColors[backgroundColorsIndex]);
 
         // Modifies page content according the URL visited
         var name = 'Hello,'
