@@ -33,7 +33,7 @@ export default function (options = {}) {
         {
           test: /\.js$/,
           exclude: /(node_modules)/,
-          loader: 'babel',
+          loader: ['babel', 'eslint'],
         },
       ],
     },
