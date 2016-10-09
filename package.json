@@ -2,7 +2,6 @@
   "name": "afullstop",
   "version": "1.0.0",
   "description": "People have been saying that this (`.`) is a period. This is clearly incorrect. This project aims to remind the people that it is a full stop.",
-  "main": "server.js",
   "scripts": {
     "lint": "eslint notaperiod webpack.config.babel.js",
     "fix": "eslint notaperiod webpack.config.babel.js --fix",
