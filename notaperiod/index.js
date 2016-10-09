@@ -1,6 +1,7 @@
-/**
-  ECMASCRIPT 2015 based code, transpiled with babel
-**/
+import React, { PropTypes } from 'react';
+import { render } from 'react-dom';
+import './template/global.css';
+
 /**
   These are javascript objects describing CSS styles.
   With the correspondent webpack workflow it will be possible to import plain
@@ -8,26 +9,8 @@
   want to.
 **/
 
-/**
- * "env": {
-   "browser": true,
-   "node": true
- },
- "parserOptions": {
-   "ecmaVersion": 7,
-   "ecmaFeatures": {
-     "jsx": true,
-     "experimentalObjectRestSpread": true
-   }
- },
- "plugins": [
-   "react"
- ]
-}
- */
-
 const baseStyle = {
-  fontFamily: '"Tangerine", cursive',
+  fontFamily: 'Tangerine, cursive',
   fontWeight: 400,
   fontSize: '2rem',
   color: 'white',
@@ -35,8 +18,6 @@ const baseStyle = {
 
 const styles = {
   container: {
-    width: '100%',
-    height: '100%',
     backgroundColor: '#7697cd',
     display: 'flex',
     alignItems: 'center',
@@ -87,7 +68,7 @@ const getRandomDesignURL = () => getSubPathURL(`designs/${getRandomFromArray(des
   so you can access them easily.
 **/
 const App = props => (
-  <div style={styles.container}>
+  <div className="container" style={styles.container}>
     <h1 style={{ ...styles.title, fontWeight: 700 }}><span id="nametext">Dear {props.name ? props.name : 'Anonymous'},</span></h1>
     <h1 style={styles.title}>This is a full stop, not a period. A full stop.</h1>
     <a style={styles.link} href={getRandomDesignURL()}>really?</a>
@@ -95,7 +76,7 @@ const App = props => (
 );
 
 App.propTypes = {
-  name: React.PropTypes.string,
+  name: PropTypes.string,
 };
 
 /**
@@ -124,4 +105,4 @@ const getURLQuery = () => parseQueryString(window.location.search);
   another design (that is transformed into a component) and the browser will
   render the appropriate page.
 **/
-ReactDOM.render(<App {...getURLQuery()} />, document.getElementById('root'));
+render(<App {...getURLQuery()} />, document.getElementById('root'));
