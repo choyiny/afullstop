@@ -2,10 +2,11 @@
   "name": "afullstop",
   "version": "1.0.0",
   "description": "People have been saying that this (`.`) is a period. This is clearly incorrect. This project aims to remind the people that it is a full stop.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "lint": "eslint notaperiod webpack.config.babel.js",
     "fix": "eslint notaperiod webpack.config.babel.js --fix",
+    "start": "webpack-dev-server",
     "build": "webpack --config webpack.config.babel.js",
     "build.prod": "webpack --config webpack.config.babel.js --env.prod --optimize-minimize"
   },
@@ -41,14 +42,19 @@
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.3.0",
     "html-webpack-plugin": "^2.22.0",
+    "react-hot-loader": "^3.0.0-beta.5",
     "style-loader": "^0.13.1",
-    "webpack": "^2.1.0-beta.25"
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "^2.1.0-beta.8"
   },
   "babel": {
     "presets": [
       "latest",
       "stage-3",
       "react"
+    ],
+    "plugins": [
+      "react-hot-loader/babel"
     ]
   },
   "eslintConfig": {
