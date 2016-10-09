@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { parseQueryString } from './utilities';
-import BaseDesign from './designs/BaseDesign';
+import BaseDesign from './components/BaseDesign';
 import './template/global.css';
 
 const getURLQuery = () => parseQueryString(window.location.search);
