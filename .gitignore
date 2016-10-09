@@ -45,3 +45,6 @@ jspm_packages
 
 # Created by macOS Finder (?)
 *.DS_Store
+
+# webpack output
+dist
