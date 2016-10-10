@@ -26,5 +26,10 @@ When you want to create a new design, you can just copy the `src/components/Base
 
 If you want to import javascript libraries, please install them using [npm](https://www.npmjs.com/): run `npm install --save <packageName>` and don't forget to commit the resulting package.json. You can import them using the new [module support in ECMASCRIPT2015](http://exploringjs.com/es6/ch_modules.html). Our Webpack workflow allows you also to include common `.css` files. Import them inside your components through referencing to their relative paths. They will be automatically bundled, reference them from your components with the `className` attribute.
 
+### Important scripts
+- `npm run start`: Starts a development server at `http://localhost:8080/notaperiod/`
+- `npm run lint`: Lint .js files for syntax to preserve code compliance
+- `npm run build.prod`: Build the project for production (so you can commit and push to update gh-pages)
+
 #### Credits
 We would love to credit you. When you make a pull request and it has been approved, please add your name to `README.md` in the contributors section.
