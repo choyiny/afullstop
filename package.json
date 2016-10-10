@@ -7,7 +7,8 @@
     "fix": "eslint notaperiod webpack.config.babel.js --fix",
     "start": "webpack-dev-server",
     "build": "webpack --config webpack.config.babel.js",
-    "build.prod": "webpack --config webpack.config.babel.js --env.prod --optimize-minimize"
+    "build.prod": "webpack --config webpack.config.babel.js --env.prod --optimize-minimize",
+    "history": "git log --pretty=format:\"%h %s\" --graph"
   },
   "engines": {
     "node": ">=6.0.0"
