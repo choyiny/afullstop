@@ -12,6 +12,8 @@ export default function (options = {}) {
 
   console.log(`=> Building notaperiod for '${environment}' environment.`);
 
+  const environmentConfigurations = environment === 'dev' ? { devtool: 'cheap-module-eval-source-map' } : {};
+
   return ({
     entry: [
       'react-hot-loader/patch',
@@ -49,6 +51,6 @@ export default function (options = {}) {
         template: `${basePath}/template/index.html`,
       }),
     ],
-    devtool: environment === 'dev' ? 'cheap-module-eval-source-map' : 'hidden-source-map',
+    ...environmentConfigurations,
   });
 }
