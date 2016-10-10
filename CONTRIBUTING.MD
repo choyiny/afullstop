@@ -17,21 +17,14 @@ Please send a [pull request here](https://github.com/choyiny/afullstop/pulls). I
 - Make sure your code is properly indented to standards of HTML, CSS and Javascript.
 
 #### Creating a new page design
-If you are creating a new page design or is modifying an existing one, please make sure your changes are viewable at your Github Pages `username.github.io/afullstop`. Your PR will not be merged without a working preview.
+If you are creating a new page design or want to modify an existing one, please make sure your changes are viewable at your Github Pages `username.github.io/afullstop`. Your PR will not be merged without a working preview.
 
-Create a new HTML page and clone the existing `404.html` template. Name your page something informative, for example, `animation.html` if you have done something related to `animate.css` or animation with javascript.
+Before you can start to develop a new page design, please make sure that you have Node.js (>=6.0.0) and all required project dependencies installed (just run `npm i` after you cloned the repository).
+We're using a straightforward (Webpack)[https://github.com/webpack/webpack] build workflow, transpile our ECMASCRIPT2015+ code with babel and use (React)[https://facebook.github.io/react/] for rendering our designs, so you can just run `npm start` to launch a development server on your computer. With this server, you can edit react components and watch the applying changes in your browser at `http://localhost:8080/notaperiod/` without page reloading.
 
-#### Using external CSS/JS Library
-If you choose to use an external CSS/JS Library such as parallax.js or bootstrap, please include the `min.js` file in `/assets/css/`. Before you do that, please make sure the library does not already exist.
+When you want to create a new design, you can just copy the `src/components/BaseDesign` to `src/components/YOURDESIGNNAME` and modify it to your preference (read a small (introduction to jsx)[https://www.tutorialspoint.com/reactjs/reactjs_jsx.htm]). To enable your new design, you need to import it inside the `src/index.js`. To render your design, you have to replace the `BaseDesign` at the *render-call* at the bottom appropriately (advanced logic to do this process automatically and randomly will be added in future). When your development servers is running, you can see the changes appearing inside your browser.
 
-Please also do use a CDN for the below Libraries
-- jQuery `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>`
-- AngularJS `<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>`
-- Bootstrap CSS `<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">`
-- Bootstrap JS `<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>`
-
-#### Check before submitting
-- You did not include any `.DS_Store` files in your pull request.
+If you want to import javascript libraries, please install them using (npm)[https://www.npmjs.com/]: run `npm install --save <packageName>` and don't forget to commit the resulting package.json. You can import them using the new (module support in ECMASCRIPT2015)[http://exploringjs.com/es6/ch_modules.html]. Our Webpack workflow allows you also to include common `.css` files. Import them inside your components through referencing to their relative paths. They will be automatically bundled, reference them from your components with the `className` attribute.
 
 #### Credits
 We would love to credit you. When you make a pull request and it has been approved, please add your name to `README.md` in the contributors section.
