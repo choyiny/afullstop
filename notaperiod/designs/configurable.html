@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <meta name="description" content="Hey Anonymous, This is a full stop, not a period, full stop.">
+    <meta name="author" content="Yong Cho Yin">
+    <title>This is a Full Stop.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.1.0/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+</head>
+<style>
+    .wrapper {
+        display: table;
+        height: 100%;
+        width: 100%;
+    }
+
+    .wrap {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .hero-content{
+    	text-align: center;
+        margin-top: 35vh;
+    }
+</style>
+
+<body>
+    <section class="hero is-success is-fullheight">
+        <div class="hero-content">
+            <div class="container">
+                <span class="icon major fa-circle"></span>
+                <h1 class="title" id="nametext"><span id="placeholder-name"></span>,</h1>
+                <h1 class="title">
+                    This is a <span id="placeholder-correct"></span>, not a <span id="placeholder-incorrect"></span><span id="placeholder-seperator"></span> <p class="animated title animatedText">full stop</p>
+                </h1>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // set page background color
+        var backgroundColors = ["#7697cd", "#cd7697", "#76c3cd", "#8176cd"];
+        var backgroundColorsIndex = Math.floor((Math.random() * backgroundColors.length-1) + 0);
+        $(".hero.is-success").css("background-color", backgroundColors[backgroundColorsIndex]);
+
+        //  set text animation
+        var textAnimations = ["shake", "bounce", "flash", "rubberBand", "swing", "tada", "wooble"];
+        var textAnimationsIndex = Math.floor((Math.random() * textAnimations.length-1) + 0);
+        $(".animatedText").addClass(textAnimations[textAnimationsIndex]);
+
+        // Replace all placeholders with real text
+        if(!getQueryParameter("correct", null) || !getQueryParameter("incorrect", null)) {
+            $("#placeholder-seperator").text(",");
+        } else {
+            $("#placeholder-seperator").text("!");
+            $(".animatedText").text(""); // remove the animated text
+        }
+
+        $("#placeholder-name").text(getQueryParameter("name", "Anonymous")); // Insert the "&name=" uri parameter
+        $("#placeholder-correct").text(getQueryParameter("correct", "full stop")); // Insert the "&correct=" uri parameter
+        $("#placeholder-incorrect").text(getQueryParameter("incorrect", "period")); // Insert the "&incorrect=" uri parameter
+    })
+
+    /**
+     * Get a query parameter.
+     *
+     * @param  string key
+     * @param  string fallback
+     * @return string
+     */
+    function getQueryParameter(key, fallback) {
+        key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&");
+
+        var match = location.search.match(new RegExp("[?&]"+key+"=([^&]+)(&|$)"));
+
+        if(match == null) {
+            return fallback;
+        }
+
+        return match && decodeURIComponent(match[1].replace(/\+/g, " "));
+    }
+</script>
+
+</html>
