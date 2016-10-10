@@ -4,8 +4,8 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { HotModuleReplacementPlugin, DefinePlugin } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-export const basePath = resolve(`${__dirname}/notaperiod`);
-export const distributionAppPath = resolve(`${__dirname}/dist/notaperiod`);
+export const basePath = resolve(`${__dirname}/src`);
+export const distributionAppPath = resolve(`${__dirname}/notaperiod`);
 
 export default function (options = {}) {
   const environment = options.prod ? 'production' : 'dev';
