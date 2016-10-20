@@ -49,6 +49,7 @@ export default function (options = {}) {
       new HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         template: `${basePath}/template/index.html`,
+        favicon: `${basePath}/template/favicon.ico`,
       }),
     ],
     ...environmentConfigurations,
